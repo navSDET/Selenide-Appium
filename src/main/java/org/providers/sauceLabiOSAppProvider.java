@@ -16,7 +16,7 @@ public class sauceLabiOSAppProvider implements WebDriverProvider {
     public WebDriver createDriver(@Nonnull Capabilities capabilities) {
         XCUITestOptions options=new XCUITestOptions();
         options.setDeviceName("iPhone 13");
-        options.setApp(System.getProperty("user.dir")+"apps/iOS-Simulator-MyRNDemoApp.1.3.0-162.zip");
+        options.setApp(System.getProperty("user.dir")+"/apps/iOS-Simulator-MyRNDemoApp.1.3.0-162.zip");
         try {
             return new IOSDriver(new URL("http://127.0.0.1:4723"),options);
         } catch (MalformedURLException e) {

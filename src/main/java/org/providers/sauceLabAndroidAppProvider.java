@@ -19,7 +19,7 @@ public class sauceLabAndroidAppProvider implements WebDriverProvider {
         options.setPlatformName("Android"); //optional
         options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2); //optional
         options.setDeviceName("nav-test-device");
-        options.setApp(System.getProperty("user.dir")+"apps/Android-MyDemoAppRN.1.3.0.build-244.apk");
+        options.setApp(System.getProperty("user.dir")+"/apps/Android-MyDemoAppRN.1.3.0.build-244.apk");
 
         try {
             return new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
