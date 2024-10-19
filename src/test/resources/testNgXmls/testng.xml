@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" [
+
+        <!ENTITY server "local">
+        <!ENTITY env "dev">
+        <!ENTITY config "config.json">
+        <!ENTITY cp "browserstack">
+        <!ENTITY testclass "org.testSuites.PdpTestSuite">
+        <!ENTITY testmethod "validateProductDetailsPageIsDisplayed">
+        <!ENTITY retry "0">
+        ]>
+
+<suite name="Selenide-Appium Regression Test Suite">
+    <groups>
+        <run>
+            <include name="Regression" />
+        </run>
+    </groups>
+    <test name="Android" thread-count="10" parallel="methods">
+        <parameter name="server" value="&server;" />
+        <parameter name="config" value="&config;" />
+        <parameter name="environment" value="&env;" />
+        <parameter name="cloudProvider" value="&cp;" />
+        <parameter name="browser" value="android" />
+        <parameter name="retry" value="&retry;" />
+        <classes>
+            <class name="org.testSuites.PdpTestSuite">
+                <methods>
+                    <include name="validateProductDetailsPageIsDisplayed"/>
+
+                    <!--                    <include name="androidLaunchTest"/>-->
+                    <!--                    <include name="validateAddToBag"/>-->
+                    <!--                    <include name="validateCartQuantity"/>-->
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
